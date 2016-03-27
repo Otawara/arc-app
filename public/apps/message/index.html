@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="ArcApp">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="/apps/message/css/loader.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <style media="screen">
+        body {
+            overflow-x: hidden;
+        }
+        kbd {
+            padding: 4px 6px;
+            font-size: 100%;
+            background-color: rgb(51, 122, 183);
+        }
+    </style>
+
+    <body ng-controller="AppCtrl">
+        <header>
+            <div id="wrap" class="row">
+                <div class="col-md-12 text-center">
+
+                    <h1>Arc <small>Chatroom</small></h1>
+                    <hr>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2" ng-if="!messageLoading">
+                    <div class="row">
+                        <div class="col-md-12 form-control" style="height: 100%;">
+                            <p ng-repeat="message in messages">
+                                <kbd>{{message.author}}</kbd> : {{message.content}}
+                            </p>
+                        </div>                      
+                    </div>
+                        <hr>  
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-model="newMessageObject.content" style="float: right;">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <a href="#" class="btn btn-md btn-primary" ng-click="newMessage(newMessageObject)" style="float: right;width: 100%;">
+                                    Send
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center" ng-if="messageLoading">
+                    <div class="spinner">
+                        <div class="dot1"></div>
+                        <div class="dot2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/vendor/jquery/dist/jquery.min.js" charset="utf-8"></script>
+        <script src="/vendor/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+
+        <!--Angular Lib-->
+
+        <script src="/vendor/angular/angular.min.js" charset="utf-8"></script>
+
+        <!--App dependencies-->
+        <script src="/apps/message/app/app.js" charset="utf-8"></script>
+        <script src="/apps/message/app/services/data-store.js" charset="utf-8"></script>
+        <script src="/apps/message/app/controllers/app.controller.js" charset="utf-8"></script>
+
+    </body>
+</html>

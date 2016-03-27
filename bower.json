@@ -1,0 +1,23 @@
+{
+  "name": "Arc",
+  "description": "IRC chat",
+  "main": "index.js",
+  "authors": [
+    "Anas <anas.demnati2@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "foundation": "^5.5.3",
+    "angular": "^1.5.2"
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>
+                        Scrapper Proverbs
+                    </h1>
+                    <br>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                {% for proverb in proverbes %}
+
+                    <div class="col-md-8 col-md-offset-2">
+                        <p>
+                            {{proverb.quote}}
+                        </p>
+
+                        <p class="pull-right text-muted">
+                            Author : {{proverb.author}}
+                        </p>
+                        <br>
+
+                        <hr>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </body>
+</html>
